@@ -1,0 +1,313 @@
+/* ====================================
+   GLOBAL RESETS AND BASE STYLES
+   ==================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #FFF8F0;
+    color: #333333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ====================================
+   HOME PAGE STYLES
+   ==================================== */
+
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-heading {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF6B6B;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.home-intro {
+    font-size: 18px;
+    color: #333333;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #FFB6C1;
+    border: 2px solid #FF6B6B;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #FFDAB9;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ====================================
+   NAVIGATION STYLES
+   ==================================== */
+
+nav {
+    background: #FFB6C1;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #FFDAB9;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid #FF6B6B;
+    color: #FF6B6B;
+}
+
+nav a.active {
+    border-bottom: 2px solid #FF6B6B;
+    color: #FF6B6B;
+}
+
+/* ====================================
+   GALLERY PAGE STYLES
+   ==================================== */
+
+.gallery-container {
+    background: #FFF8F0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.page-heading {
+    font-size: 42px;
+    color: #FF6B6B;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.photo-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border: 4px solid #FFDAB9;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.photo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.photo-caption {
+    font-size: 20px;
+    color: #333333;
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+    line-height: 1.5;
+    padding: 15px;
+}
+
+/* ====================================
+   ABOUT PAGE STYLES
+   ==================================== */
+
+.about-container {
+    background: #FFF8F0;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+/* Card flip container */
+.card-container {
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Inner card element */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(to bottom, #FFB6C1, #FFDAB9);
+    border: 3px solid #FF6B6B;
+    flex-direction: column;
+}
+
+.card-back {
+    background: white;
+    border: 3px solid #FFDAB9;
+    transform: rotateY(180deg);
+    padding: 30px;
+    text-align: center;
+}
+
+/* Card front content */
+.card-front-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.card-front-emoji {
+    font-size: 60px;
+}
+
+/* Card back content */
+.card-back-message {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* Closing banner */
+.closing-banner {
+    background: #FF6B6B;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.3);
+    letter-spacing: 1px;
+}
+
+/* ====================================
+   RESPONSIVE DESIGN - MOBILE
+   ==================================== */
+
+@media (max-width: 768px) {
+    /* Home page mobile */
+    .home-heading {
+        font-size: 32px;
+    }
+
+    .home-intro {
+        font-size: 16px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+    }
+
+    /* Navigation mobile */
+    nav a {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    /* Gallery mobile */
+    .page-heading {
+        font-size: 32px;
+    }
+
+    .photo-caption {
+        font-size: 18px;
+    }
+
+    .gallery-container,
+    .about-container {
+        padding: 20px;
+    }
+
+    /* About page mobile */
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-container {
+        min-height: 200px;
+        height: auto;
+    }
+
+    .closing-banner {
+        font-size: 22px;
+    }
+}
